@@ -149,14 +149,14 @@ $break-lg: 1400px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 0;
   @content;
 }
 
 @mixin center-child{
   display: block;
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 0;
   text-align: left;
   text-decoration: none;
   @content;
