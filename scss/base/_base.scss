@@ -1,0 +1,19 @@
+//=============================================================================
+// Base Styles
+//=============================================================================
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-family: $font-family--primary;
+}
+
+p {
+ padding: 0em 2.5em 1.25em;
+ font-size: em(20px);
+ line-height: (27px / 20px);
+}
+
+ul {
+  list-style-type: none;
+}

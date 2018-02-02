@@ -1,0 +1,65 @@
+//=============================================================================
+// Button styles
+//=============================================================================
+
+.grid__col--12 {
+  .btn--default {
+    @include btn;
+    background-color: $blue;
+    @include mq(medium) {
+      margin-right: em(50px);
+    }
+  }
+}
+
+.grid__col--12 {
+  .btn--success {
+    @include btn;
+    background-color: $green;
+    @include mq(medium) {
+      margin-right: em(50px);
+    }
+  }
+}
+
+.grid__col--12 {
+  .btn--error {
+    @include btn;
+    background-color: $coral;
+    @include mq(medium) {
+      margin-right: em(50px);
+    }
+  }
+}
+
+.grid__col--12 {
+  .btn--warning {
+    @include btn;
+    background-color: $orange;
+    @include mq(medium) {
+      margin-right: em(50px);
+    }
+  }
+}
+
+.grid__col--12 {
+  .btn--info {
+    @include btn;
+    background-color: $purple;
+    @include mq(medium) {
+      margin-right: em(0px);
+    }
+  }
+}
+
+.btn--default {
+  @include btn;
+  background-color: $blue;
+  width: em(350px);
+  margin-top: em(8px);
+  margin-right: 65px;
+  @include mq(medium) {
+    width: em(300px);
+    margin-top: em(8px);
+  }
+}

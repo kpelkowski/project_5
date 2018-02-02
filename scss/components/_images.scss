@@ -1,0 +1,37 @@
+//=============================================================================
+// Image styles
+//=============================================================================
+
+.img--logo {
+  padding-top: em(25px);
+  padding-bottom: em(25px);
+}
+
+.img--avatar {
+  @include btn;
+  width: 250px;
+  @include center-child;
+  padding: em(20px);
+  @extend %center-align;
+  @include mq(medium){
+    margin-left: em(100px);
+    width: 300px;
+  }
+  .form & {
+    @include mq(medium) {
+      margin-left: em(0px);
+    }
+  }
+}
+
+.img--frame {
+  @include btn;
+  width: 350px;
+  padding: em(16px);
+  border: em(1px) solid lightgrey;
+  margin: 0 auto;
+  @include mq(medium){
+    margin-left: em(85px);
+    width: 500px;
+  }
+}

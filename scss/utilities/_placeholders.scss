@@ -1,0 +1,40 @@
+//============================================================================
+// Placeholder styles
+//============================================================================
+
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0.0625em;
+  margin: -0.0625em;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0625em;
+}
+
+
+// Headlines
+
+%hdln-primary {
+  font-weight: bold;
+  font-size: em(30px);
+  color: $color-primary;
+  margin-left: em(34px);
+  margin-right: em(50px);
+  margin-bottom: em(70px, 42px);
+}
+
+%hdln-secondary {
+  margin-left: em(25px);
+  margin-bottom: em(15px);
+  font-weight: 300;
+  font-size: em(20px);
+  color: grey;
+}
+
+//Center Items
+
+%center-align {
+  text-align: center;
+}

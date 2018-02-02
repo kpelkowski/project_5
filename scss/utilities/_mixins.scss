@@ -1,0 +1,163 @@
+//=============================================================================
+// Mixin styles
+//=============================================================================
+
+//import fonts if defined
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// mixins to make element and modifiers
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier}{
+    @content;
+  }
+}
+
+//Adjacent sibling margin
+
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}
+
+// grid function
+
+@function g-context($g-col-width, $g-col-count, $g-gutter-width) {
+  $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+
+  @return $g-context;
+}
+
+//loop for values for $target and $context
+
+@media(min-width: 769px) {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    .grid__col--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+}
+
+// Column styles
+
+[class ^="grid__col--"] {
+  @media(min-width: 1px) and (max-width: 768px) {
+    margin-top: em(12px);
+    margin-bottom: em(12px);
+  }
+  @media(min-width: 769px) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
+//calculate em values
+
+@function em($target, $context: $base__font-size) {
+  @return($target / $context) * 1em;
+}
+
+// color function
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($colors, $palette), $shade);
+}
+
+//media query Mixin
+$break-md: 480px;
+$break-lg: 1400px;
+
+ @mixin mq($break) {
+   @if $break == "medium" {
+     @media(min-width: $break-md + 1){
+       @content;
+     }
+   }
+   @else if $break == "large" {
+     @media(min-width: $break-lg) {
+       @content;
+     }
+   }
+   @else {
+     @error "No value could be retrieved for #{$break}";
+   }
+ }
+
+
+// mixin for grid styles
+@mixin grid-col {
+    text-align: left;
+    width: 400px;
+    border-radius: 0.3125em;
+    padding: 0.625em 7.5em;
+    margin-top: 0.3125em;
+    padding-left: 0;
+    padding-right: 0;
+    flex: 1;
+    @content;
+    @include mq(medium) {
+      width: 300px;
+      text-align: center;
+      margin-bottom: 0.9375em;
+      margin-right: 0.3125em;
+      margin-left: 0.3125em;
+    }
+  }
+
+// mixin for buttons
+@mixin btn {
+  border-radius: 0.3125em;
+  padding: 0.625em 7.5em;
+  margin-top: 0.3125em;
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 350px;
+  margin-left: 65px;
+  @content;
+  @include mq(medium) {
+    width: 200px;
+    justify-content: space-around;
+    padding: 0.6em 1em;
+    margin: auto;
+  }
+}
+
+// center
+
+@mixin center-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 auto;
+  @content;
+}
+
+@mixin center-child{
+  display: block;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: left;
+  text-decoration: none;
+  @content;
+}

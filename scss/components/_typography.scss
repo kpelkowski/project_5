@@ -1,0 +1,42 @@
+//=============================================================================
+// Typography styles
+//=============================================================================
+
+.container {
+  @include mq(medium) {
+    margin-left: em(0px);
+    margin-right: em(0px);
+  }
+}
+
+.headline--secondary {
+  @extend %hdln-secondary;
+  .form & {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+}
+
+.headline--primary {
+  @extend %hdln-primary;
+}
+
+.link {
+  color: palette(blue, dark);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blockquote {
+  font-style: italic;
+  font-size: em(24px);
+  margin: em(32px, 24px) em(50px);
+  text-align: left;
+  border-left: em(5px) solid $color-primary;
+  border-radius: em(5px);
+  padding: 0 0 0 3%;
+}
+
+.card {
+  margin: 0;
+}

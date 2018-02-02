@@ -1,0 +1,44 @@
+//=============================================================================
+// Form styles
+//=============================================================================
+
+.form {
+  @include center-container;
+  @include mq(medium) {
+    margin-right: 200px;
+
+  }
+
+  @include e(label) {
+    @include center-child;
+    display: block;
+    margin-top: em(16px);
+  }
+
+  @include e(input) {
+    @include center-child;
+    width: em(320px);
+    font-size: em(16px);
+    padding: .5em  1em;;
+    margin: none;
+    border: none;
+    border-bottom: em(6px) solid $color-primary;
+    background-color: $white;
+    font-weight: light;
+    & :focus {
+      border-color: palette(blue, dark);
+    }
+
+    @include mq(medium) {
+      width: em(300px);
+      margin: auto;
+    }
+  }
+  @include e(label) {
+    @include m(hidden) {
+      @extend .srt;
+    }
+    display: block;
+    margin-bottom: 0;
+  }
+}

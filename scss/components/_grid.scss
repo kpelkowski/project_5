@@ -1,0 +1,78 @@
+//=============================================================================
+// Grid styles
+//=============================================================================
+
+.grid {
+  @extend .centered;
+  width: 90%;
+
+
+  //nested 100%
+  [class*="grid__col--"] > & {
+    width: 100%;
+  }
+
+  //max-width
+  @media(min-width: 1100px) {
+    max-width: $g-count-max-w;
+  }
+}
+
+
+.grid__row {
+  @include center-container;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  margin-bottom: em(35px);
+
+  @include mq(medium) {
+    flex-direction: row;
+    margin-left: em(56px);
+    margin-right: em(56px);
+  }
+
+
+  .centered {
+    @include mq(medium) {
+      max-width: 50%;
+    }
+  }
+
+  .grid__col--12.theme__colors {
+    @include grid-col;
+    background-color: $color-primary;
+  }
+
+  .grid__col--6.theme__colors {
+    @include grid-col;
+    background-color: palette(blue, dark);
+  }
+
+  .grid__col--4.theme__colors {
+    @include grid-col;
+    background-color: palette(blue, light);
+  }
+
+  .grid__col--3.theme__colors {
+    @include grid-col;
+    background-color: palette(purple, light);
+  }
+
+  .grid__col--5.theme__colors {
+    @include grid-col;
+    background-color: palette(green, light);
+  }
+
+  .grid__col--7.theme__colors {
+    @include grid-col;
+    background-color: palette(coral, light);
+    flex: 2;
+  }
+
+  .grid__col--8.theme__colors {
+    @include grid-col;
+    background-color: palette(orange, light);
+    flex: 2;
+  }
+}

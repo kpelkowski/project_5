@@ -1,0 +1,61 @@
+//=============================================================================
+// Variable styles
+//=============================================================================
+
+
+// Grid
+
+$g-col-width: 65px;
+$g-col-count: 12;
+$g-gutter-width: 20px;
+$g-count-max-w: 1050px;
+
+//fonts
+
+$font-url--google: 'http://fonts.googleapis.com/css?family=Roboto';
+
+$font-family--primary: 'Roboto', Helvetica, sans-serif;
+
+//font-size and line-height
+
+$base__font-size: 16px;
+$base__line: 24px;
+
+//colors
+
+$color-primary: #0bf4b3;
+$blue: #32e2f1;
+$green: #50c878;
+$coral: #d46963;
+$orange: #f28500;
+$purple: #9678b6;
+$white: #fff;
+
+
+$colors:(
+  blue: (
+    light: lighten($blue, 25%),
+    base: $blue,
+    dark: darken($blue, 10%)
+  ),
+  green: (
+    light: lighten($green, 25%),
+    base: $green,
+    dark: darken($green, 25%)
+  ),
+  coral: (
+    light: lighten($coral, 10%),
+    base: $coral,
+    dark: darken($coral, 10%)
+  ),
+  orange: (
+    light: lighten($orange, 25%),
+    base: $orange,
+    dark: darken($orange, 25%)
+  ),
+  purple: (
+    light: lighten($purple, 25%),
+    base: $purple,
+    dark: darken($purple, 25%)
+  )
+)
