@@ -475,7 +475,7 @@ template {
   font-family: "Roboto", Helvetica, sans-serif; }
 
 p {
-  padding: 0em 2.5em 1.25em;
+  padding: 0em 2.5em;
   font-size: 1.25em;
   line-height: 1.35; }
 
@@ -500,7 +500,8 @@ ul {
       margin: auto; } }
   @media (min-width: 481px) {
     .grid__col--12 .btn--default {
-      margin-right: 3.125em; } }
+      margin-right: 3.125em;
+      margin-left: 1.5625em; } }
 
 .grid__col--12 .btn--success {
   border-radius: 0.3125em;
@@ -668,7 +669,7 @@ ul {
     width: 20em;
     font-size: 1em;
     padding: .5em  1em;
-    margin: 0;
+    margin-left: 80px;
     border: none;
     border-bottom: 0.375em solid #0bf4b3;
     background-color: #fff;

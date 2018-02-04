@@ -8,6 +8,7 @@
     background-color: $blue;
     @include mq(medium) {
       margin-right: em(50px);
+      margin-left: em(25px);
     }
   }
 }
