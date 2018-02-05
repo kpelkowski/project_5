@@ -84,8 +84,6 @@
 }
 
 //media query Mixin
-$break-md: 480px;
-$break-lg: 1400px;
 
  @mixin mq($break) {
    @if $break == "medium" {
@@ -145,14 +143,6 @@ $break-lg: 1400px;
 
 // center
 
-@mixin center-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0;
-  @content;
-}
-
 @mixin center-child{
   display: block;
   margin: 0 auto;
@@ -160,4 +150,13 @@ $break-lg: 1400px;
   text-align: left;
   text-decoration: none;
   @content;
+}
+
+//flex mixins
+
+@mixin flex($flex, $flex-direction: null, $wrap: null, $justify: null) {
+  display: $flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
 }

@@ -21,6 +21,11 @@ $font-family--primary: 'Roboto', Helvetica, sans-serif;
 $base__font-size: 16px;
 $base__line: 24px;
 
+//media query Mixin variables
+$break-md: 480px;
+$break-lg: 1400px;
+
+
 //colors
 
 $color-primary: #0bf4b3;

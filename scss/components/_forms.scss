@@ -3,7 +3,7 @@
 //=============================================================================
 
 .form {
-  @include center-container;
+  @include flex(flex, $flex-direction: column);
   @include mq(medium) {
     margin-right: 200px;
 

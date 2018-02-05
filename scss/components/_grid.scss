@@ -20,7 +20,7 @@
 
 
 .grid__row {
-  @include center-container;
+  @include flex(flex, $flex-direction: column);
   justify-content: center;
   align-items: center;
   background-color: $white;

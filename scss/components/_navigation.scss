@@ -2,13 +2,21 @@
 // Navigation styles
 //=============================================================================
 
+.nav {
+  margin-top: em(24px);
+  @include mq(medium) {
+    @include flex(flex, $justify: space-between);
+    margin-top: 0;
+    align-self: center;
+    width: 700px;
+  }
+}
+
 .nav__item {
-  @include center-child;
+  @include flex(flex, $flex-direction: column);
   display: block;
-  width: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 1.25em;
   margin-left: auto;
   margin-right: auto;
   a {
@@ -16,26 +24,14 @@
     font-size: em(18px);
     font-weight: 300;
     border-radius: em(5px);
-    flex-direction: row;
     display: block;
     text-align: center;
     text-decoration: none;
-    width: 100%;
     margin-bottom: em(16px);
-    padding: .8em 7.5em;
-    @include mq(medium) {
-      padding: 0;
-    }
+    padding: em(7px);
   }
   :hover {
     color: #fff;
     background-color: $color-primary;
-  }
-}
-
-.nav {
-  @include mq(medium) {
-    display: flex;
-    width: 700px;
   }
 }
