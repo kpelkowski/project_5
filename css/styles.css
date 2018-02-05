@@ -634,7 +634,10 @@ ul {
     text-align: center;
     text-decoration: none;
     margin-bottom: 1em;
-    padding: 0.4375em; }
+    padding: 0.75em 7.5em; }
+    @media (min-width: 481px) {
+      .nav__item a {
+        padding: 0.75em 2.5em; } }
   .nav__item :hover {
     color: #fff;
     background-color: #0bf4b3; }

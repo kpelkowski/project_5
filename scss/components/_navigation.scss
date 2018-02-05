@@ -28,7 +28,10 @@
     text-align: center;
     text-decoration: none;
     margin-bottom: em(16px);
-    padding: em(7px);
+    padding: em(12px) em(120px);
+    @include mq(medium) {
+      padding: em(12px) em(40px);
+    }
   }
   :hover {
     color: #fff;
